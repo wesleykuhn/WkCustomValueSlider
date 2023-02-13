@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="WkCustomValueSlider.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="thisMainPage"
+    xmlns:cc="clr-namespace:WkCustomValueSlider.CustomControls"
+    BackgroundColor="#222222"
+    BindingContext="{x:Reference thisMainPage}">
+
+    <Grid
+        Padding="10"
+        HorizontalOptions="FillAndExpand"
+        RowDefinitions="Auto,*,80"
+        RowSpacing="20"
+        VerticalOptions="FillAndExpand">
+        <Label
+            Grid.Row="0"
+            FontFamily="Sans Serif"
+            FontSize="Large"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Value, StringFormat='Current value: {0}'}"
+            TextColor="White" />
+
+        <cc:IntValueSlider
+            Grid.Row="1"
+            BorderColor="LightGray"
+            BorderThickness="3"
+            CornerRadius="30"
+            MinValueGradColor="Crimson"
+            MaxValueGradColor="LawnGreen"
+            HorizontalOptions="Center"
+            SelectedValue="{Binding Value}"
+            UnselectedColor="#333333"
+            VerticalOptions="FillAndExpand"
+            WidthRequest="90" />
+
+        <cc:IntValueSlider
+            Grid.Row="2"
+            BorderColor="LightGray"
+            BorderThickness="3"
+            CornerRadius="30"
+            MinValueGradColor="Crimson"
+            MaxValueGradColor="LawnGreen"
+            Orientation="Horizontal"
+            HorizontalOptions="FillAndExpand"
+            SelectedValue="{Binding Value}"
+            UnselectedColor="#333333"
+            VerticalOptions="FillAndExpand" />
+    </Grid>
+
+</ContentPage>
